@@ -1,0 +1,3 @@
+struct vm {
+    cpu CPU{};
+};

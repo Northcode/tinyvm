@@ -4,22 +4,9 @@ struct vm;
 
 typedef void (*instruction)(vm*);
 
-struct device {
-
-};
-
-struct cpu : public device {
-    int A[REG_SIZE];
-
-    instruction instruction_set[];
-    
-    cpu() {
-    }
-};
-
-struct vm {
-    cpu CPU{};
-};
+#include "device.hpp"
+#include "cpu.hpp"
+#include "vm.hpp"
 
 int main() {
     vm v{};
