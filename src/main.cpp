@@ -5,5 +5,6 @@
 
 int main() {
     vm v{};
+    v.run();
     return 0;
 }

@@ -12,8 +12,8 @@ struct cpu : public device {
 
     instruction instruction_set[];
     
-    cpu() {
-    }
+    cpu();
+    void tick();
 };
 
 #endif

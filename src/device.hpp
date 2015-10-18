@@ -5,6 +5,9 @@ struct vm;
 
 struct device {
     vm* parent;
+
+    virtual void tick() {}
+    
 };
 
 #endif
