@@ -10,6 +10,7 @@ struct vm {
     cpu* CPU;
 
     vm();
+    void add_device(device* dev);
     void tick();
     void run();
 

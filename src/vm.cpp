@@ -1,8 +1,12 @@
 #include "vm.hpp"
 
 vm::vm() {
-    devices.push_back(std::unique_ptr<device>((device*)new cpu()));
-    devices[0]->parent = this;
+    add_device(new cpu());
+}
+
+void vm::add_device(device* dev) {
+    dev->parent = this;
+    devices.push_back(std::move(std::unique_ptr<device>(dev)));
 }
 
 void vm::tick() {
