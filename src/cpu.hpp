@@ -15,4 +15,5 @@ struct cpu : public device {
     cpu() {
     }
 };
+
 #endif

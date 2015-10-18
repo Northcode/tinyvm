@@ -1,13 +1,17 @@
 #ifndef TINYVM_VM_H
 #define TINYVM_VM_H
-
+#include <vector>
+#include <memory>
 #include "cpu.hpp"
 
-constexpr int REG_SIZE = 15;
-
-typedef void (*instruction)(vm*);
-
 struct vm {
-    cpu CPU{};
+    bool running;
+    std::vector<std::unique_ptr<device>> devices;
+    cpu* CPU;
+
+    vm();
+    void tick();
+    void run();
+
 };
 #endif
