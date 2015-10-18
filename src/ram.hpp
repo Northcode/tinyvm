@@ -1,12 +1,12 @@
 #ifndef TINYVM_RAM_H
 #define TINYVM_RAM_H
 
-#include "device"
+#include "device.hpp"
 
-constexpr MEMORY_SIZE = 4*1024;
 typedef unsigned char byte;
 typedef unsigned int dword;
 
+constexpr dword MEMORY_SIZE = 4*1024;
 
 struct ram : public device {
     byte data[MEMORY_SIZE];
@@ -18,6 +18,6 @@ struct ram : public device {
     byte  read_byte  (dword address);
     dword read_dword (dword address);
     int   read_int   (dword address);
-}
+};
 
 #endif
